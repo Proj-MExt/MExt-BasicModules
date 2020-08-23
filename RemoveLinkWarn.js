@@ -1,5 +1,5 @@
 let removeLinkWarn = {
-    "runcase": () => { return MExt.ValueStorage.get("removeLinkWarn") && location.pathname == "/plugin.php" && getRequest('id') == "link_redirect" },
+    "runcase": () => { return MExt.ValueStorage.get("removeLinkWarn") && location.pathname == "/plugin.php" && MExt.Units.getRequest('id') == "link_redirect" },
     "config": [{
         "id": "removeLinkWarn",
         "default": true,
