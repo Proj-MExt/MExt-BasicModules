@@ -114,7 +114,7 @@ display: none;
         };
         // 为代码块添加行数显示与复制按钮
         let fixCode = () => {
-            $(".pl pre:not([id]) code").each((i, v) => {
+            $(".pl pre:not([id]) code:not([code-fixed])").attr("code-fixed",'').each((i, v) => {
                 // 构建计数器
                 let ln = v.innerHTML.split("\n").length;
                 let lnC = LnBuilder(ln);
@@ -131,7 +131,7 @@ display: none;
                 v.prepend(counter);
                 v.parentElement.append(copy);
             });
-            $(".pl div.blockcode").each((i, v) => {
+            $(".pl div.blockcode:not([code-fixed])").attr("code-fixed",'').each((i, v) => {
                 // 构建计数器
                 let ln = v.firstElementChild.firstElementChild.childElementCount;
                 let lnC = LnBuilder(ln);
@@ -142,9 +142,7 @@ display: none;
             });
             dlg('Line counter appended.');
             copycode = (t) => {
-                t = t.cloneNode(true);
-                t.firstElementChild.remove();
-                setCopy(t.innerText.replace(/\n\n/g, "\n"), "代码已复制到剪贴板");
+                setCopy(t.innerText.replace(/\n\n/g, "\n").replace(t.firstElementChild.innerText,''), "代码已复制到剪贴板");
                 dlg("Code copied.");
             };
         }
