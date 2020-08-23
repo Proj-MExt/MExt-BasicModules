@@ -24,11 +24,12 @@ let restrictMedalLine = {
     .md_ctrl {
         position: relative;
         overflow-y: hidden;
-        max-height: ` + (Stg.get('maxMedalLine') * (Stg.get('hoverableMedal') ? 60 : 55) + 45).toString() + `px;
+        max-height: ` + (Stg.get('maxMedalLine') * (Stg.get('hoverableMedal') ? 60 : 55) + 45).toString() + `px!important;
+        transition: unset!important;
     }
 
     .md_ctrl.show-all {
-        max-height: 3000px;
+        max-height: 3000px!important;
         padding-bottom: 40px;
     }`,
     "core": () => {
