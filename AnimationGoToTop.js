@@ -1,5 +1,11 @@
-let animationGoToTop = {
-    "runcase": () => { return MExt.ValueStorage.get("animationGoToTop") },
+const animationGoToTop = {
+    "meta": {
+        "id": "MExt_animationGoToTop",
+        "name": "Animation Go To Top",
+        "version": "1.0.0",
+        "updateInfo": []
+    },
+    "runcase": () => { return MExt.Storage.get("animationGoToTop") },
     "config": [{
         "id": "animateGoToTopButton",
         "default": true,
