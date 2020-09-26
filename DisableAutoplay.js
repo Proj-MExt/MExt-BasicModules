@@ -1,4 +1,9 @@
-let disableAutoplay = {
+const disableAutoplay = {
+    "meta" : {
+        "id": "MExt_disableAutoplay",
+        "name": "DisableAutoPlay",
+        "version": "1.0.0"
+    },
     "runcase": () => { return MExt.ValueStorage.get("disableAutoplay") },
     "config": [{
         "id": "disableAutoplay",
@@ -8,7 +13,7 @@ let disableAutoplay = {
         "desc": "阻止页内BGM自动播放."
     }],
     "core": () => {
-        let clearAutoPlay = () => {
+        const clearAutoPlay = () => {
             $("iframe[id*=iframe_mp3]:not([id*=no_autoplay])").each((i, v) => {
                 // 重构播放器,去除自动播放属性
                 let player = document.createElement("iframe");
@@ -27,7 +32,7 @@ let disableAutoplay = {
                 dlg("Canceled all autoplay");
             });
         };
-        $(this).on("DiscuzAjaxGetFinished DiscuzAjaxPostFinished", () => { setTimeout(clearAutoPlay, 100); });
+        $(this).on("ThreadPreviewOpened ThreadFlushFinished NewReplyAppended", () => { setTimeout(clearAutoPlay, 100); });
         $(clearAutoPlay);
     }
 };
