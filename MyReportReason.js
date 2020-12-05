@@ -23,9 +23,9 @@ let myReportReason = {
                 let createElement = (i) =>
 `<td><label>
 <input type="radio" name="report_select" class="pr" onclick="jQuery('#report_message').val('${reportReason[i]}').focus()" value="${reportReason[i]}">
-${reportReason[i]}</label></td>`
-                let height = Math.ceil(reportReason.length / width);
+${reportReason[i]}</label></td>`;
                 let width = parseInt(Stg.get('myReportReasonCols'));
+                let height = Math.ceil(reportReason.length / width);
                 // 排序方式如此是为了在编辑自定义举报理由把短理由放在一起时它们更有可能出现在同一列
                 for(let i = 0; i < height; i++){
                     for(let j = 0; j < width; j++){
