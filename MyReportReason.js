@@ -18,7 +18,7 @@ let myReportReason = {
         let getReasons = () => {
                 // 分隔list
                 let reportReason = Stg.get('myReportReason').split("\n");
-                let rrstr = "<p class=\"mtn mbn\"><table><tr>";
+                let rrstr = '<p class=\"mtn mbn\"><table style="min-width: 30em"><tr>';
                 // 让用户选完理由之后可以继续编辑理由
                 let createElement = (i) =>
 `<td><label>
