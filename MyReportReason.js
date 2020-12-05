@@ -45,6 +45,6 @@ ${reportReason[i]}</label></td>`;
             $("#report_other").attr("style","");
         }
         $("#append_parent").on('DOMNodeInserted', hookReportWin);
-        $("body").append("<style>#report_message { width: 99% !important}</style>");
+        $("body").append("<style>#report_message { width: 97% !important}</style>");
     }
 };
