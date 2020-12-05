@@ -1,5 +1,5 @@
 let myReportReason = {
-    "runcase": () => { return parseInt(MExt.ValueStorge.get('myReportReasonCols')) > 0 },
+    "runcase": () => { return parseInt(MExt.ValueStorage.get('myReportReasonCols')) > 0 },
     "config": [{
         "id": "myReportReason",
         "default": "广告垃圾\n恶意灌水\n违规内容\n重复发帖",
