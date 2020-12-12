@@ -28,7 +28,7 @@ let miscFix = {
             // 修复某些页面书框被撕裂的问题
             { "script": "$(()=>{if(!$('.mc_map_wp .mc_map_border_foot').length){$('.mc_map_border_foot').remove();$('.mc_map_wp').append('<div class=\"mc_map_border_foot\"></div>')}})" },
             // 默认使用高清头像
-            { "script": "$(()=>{$('.avt img, .avtm img, .special_photo img').each((i,v)=>{v.src=v.src.replace('middle','big').replace('small','big')});})" },
+            { "script": "let main = ()=>{$('.avt img, .avtm img, .special_photo img').each((i,v)=>{v.src=v.src.replace('middle','big').replace('small','big')});}; main(); $(this).on(\"DiscuzAjaxGetFinished DiscuzAjaxPostFinished\", main);" },
             // 主动聚焦编辑器iframe,修复报错问题.
             { "script": "$(()=>{if(typeof wysiwyg !='undefined' && wysiwyg){editwin.document.body.focus()};})" },
             // 小提示样式修复

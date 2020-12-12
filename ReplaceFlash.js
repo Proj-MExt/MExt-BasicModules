@@ -11,6 +11,9 @@ let replaceFlash = {
         let replace = () => {
             $("span[id*=swf] embed").each((i, v) => {
                 let player = document.createElement("iframe");
+                if(v.src.indexOf("style/swf/widget.swf") == -1){
+                    return;
+                }
                 player.src = v.src.replace("style/swf/widget.swf", "outchain/player").replace("sid=", "id=");
                 player.width = v.width;
                 player.height = v.height;
