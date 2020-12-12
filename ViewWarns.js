@@ -22,7 +22,7 @@ background-size: 16px!important;
                 $(".plhin:not([vw-added*=true])").each((i, v) => {
                     let href = $(v).find(".authi .xw1").attr("href");
                     if (!href) {
-                        return false;
+                        return;
                     }
                     let uid = /uid=(\d*)/.exec(href)[1];
                     $(v).attr("vw-added", "true").find("ul.xl.xl2.o.cl").append($('<li class="view_warns_inposts"><a href="forum.php?mod=misc&action=viewwarning&tid=952104&uid=' + uid + '" title="查看警告记录" class="xi2" onclick="showWindow(\'viewwarning\', this.href)">查看警告记录</a></li>'));
