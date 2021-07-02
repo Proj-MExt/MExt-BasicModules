@@ -5,7 +5,7 @@ let miscFix = {
         "default": "",
         "name": "杂项修复",
         "type": "text",
-        "desc": "此值用于规定杂项修复的行为,默认值为空,修改为00000000000以关闭全部.错误的值会使该项失效.详情请查阅源码."
+        "desc": "此值用于规定杂项修复的行为,默认值为空,修改为0000000000以关闭全部.错误的值会使该项失效.详情请查阅源码."
     }],
     "style": '',
     "core": () => {
@@ -27,8 +27,6 @@ let miscFix = {
             { "script": `$(()=>{$("img.zoom").parent().each((i,v)=>{if(v.nodeName=="A"){$(v).on("click",(e)=>{console.log(e);if(e.shiftKey){e.preventDefault();}})}})})` },
             // 修复某些页面书框被撕裂的问题
             { "script": "$(()=>{if(!$('.mc_map_wp .mc_map_border_foot').length){$('.mc_map_border_foot').remove();$('.mc_map_wp').append('<div class=\"mc_map_border_foot\"></div>')}})" },
-            // 默认使用高清头像
-            { "script": "let main = ()=>{$('.avt img, .avtm img, .special_photo img').each((i,v)=>{v.src=v.src.replace('middle','big').replace('small','big')});}; main(); $(this).on(\"DiscuzAjaxGetFinished DiscuzAjaxPostFinished\", main);" },
             // 主动聚焦编辑器iframe,修复报错问题.
             { "script": "$(()=>{if(typeof wysiwyg !='undefined' && wysiwyg){editwin.document.body.focus()};})" },
             // 小提示样式修复
